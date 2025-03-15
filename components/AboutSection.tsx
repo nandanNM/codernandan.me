@@ -13,7 +13,7 @@ const AboutSection = () => {
   return (
     <section className="pr-4">
       <p
-        className={`mb-2 text-left text-base md:text-justify ${
+        className={`mb-1 text-left text-base md:text-justify ${
           !isExpanded ? "line-clamp-4" : ""
         }`}
       >
@@ -53,7 +53,7 @@ const AboutSection = () => {
       <Button
         onClick={toggleExpand}
         variant="link"
-        className="mb-2 p-0 text-blue-500"
+        className="mb-2 cursor-pointer p-0 text-blue-500"
       >
         {isExpanded ? "Read less" : "Read more"}
       </Button>

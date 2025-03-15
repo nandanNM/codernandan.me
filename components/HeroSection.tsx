@@ -2,7 +2,7 @@ import HeroImage from "./HeroImage";
 
 export default function HeroSection() {
   return (
-    <main className="flex max-w-[428px] grow flex-col items-center gap-6 pl-0 sm:items-start sm:px-14 md:pl-20">
+    <main className="mx-auto flex max-w-[428px] grow flex-col items-center gap-6 pl-0 sm:px-14">
       <div className="mt-16">
         <HeroImage />
       </div>

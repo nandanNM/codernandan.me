@@ -1,4 +1,5 @@
 "use client";
+
 import BodySection from "@/components/BodySection";
 import HeroSection from "@/components/HeroSection";
 import { useEffect, useRef } from "react";
@@ -41,21 +42,17 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="font-recoleta flex w-full max-w-[1728px] flex-col lg:flex-row">
-      <div
-        ref={heroSectionRef}
-        className="lg:sticky lg:top-0 lg:h-screen lg:flex-none"
-        style={{
-          opacity: 1,
-          transform: "translate(0px, 0px)",
-          transition:
-            "opacity 1s cubic-bezier(0.42, 0, 0.25, 1), transform 1s cubic-bezier(0.2, 1.18, 0.47, 1)",
-        }}
-      >
-        <HeroSection />
-      </div>
-      <div ref={bodySectionRef} className="grow overflow-auto lg:h-screen">
-        <BodySection />
+    <div className="font-recoleta flex">
+      <div className="flex w-full flex-col lg:flex-row">
+        <div
+          ref={heroSectionRef}
+          className="lg:sticky lg:top-0 lg:h-screen lg:flex-none"
+        >
+          <HeroSection />
+        </div>
+        <div ref={bodySectionRef} className="grow overflow-auto lg:h-screen">
+          <BodySection />
+        </div>
       </div>
     </div>
   );
