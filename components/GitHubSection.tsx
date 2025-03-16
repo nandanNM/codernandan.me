@@ -7,7 +7,7 @@ import GitHubCalendar from "react-github-calendar";
 
 export default function GitHubSection() {
   return (
-    <section className="mb-4 flex flex-wrap">
+    <section className="mb-4 flex flex-col flex-wrap items-start pr-4">
       <div className="mb-2">
         <strong className="ml-3">Open Sorce ❤️ ↓</strong>
       </div>
@@ -29,7 +29,7 @@ export default function GitHubSection() {
                 className="font-caveat mt-4 cursor-pointer rounded-[10px] bg-[#000000] p-4 text-xl font-bold text-[#ffffff]"
                 size="lg"
               >
-                Follow
+                Follow On GitHub
               </Button>
             </Link>
           </div>
@@ -39,6 +39,7 @@ export default function GitHubSection() {
             username="nandanNM"
             colorScheme="light"
             hideMonthLabels
+            blockSize={13}
           />
         </CardContent>
       </Card>

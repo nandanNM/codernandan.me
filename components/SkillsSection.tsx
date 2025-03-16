@@ -59,26 +59,31 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section className="mb-8 flex flex-wrap gap-2">
-      {skillsList.map((skill, index) => (
-        <Badge
-          key={index}
-          variant={hoveredIndex === index ? "secondary" : "outline"}
-          className="flex cursor-pointer items-center gap-2 rounded-full text-[16px] font-normal transition-all duration-300 hover:scale-120"
-          onMouseEnter={() => setHoveredIndex(index)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <span
-            style={{
-              color: hoveredIndex === index ? skill.color : "inherit",
-            }}
-            className="transition-colors duration-300"
+    <section className="mb-8 flex flex-col items-start pr-4">
+      <div className="mb-2">
+        <strong className="ml-3">Skills 🧠 ↓ </strong>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {skillsList.map((skill, index) => (
+          <Badge
+            key={index}
+            variant={hoveredIndex === index ? "secondary" : "outline"}
+            className="flex cursor-pointer items-center gap-2 rounded-full text-[16px] font-normal transition-all duration-300 hover:scale-120"
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
-            {skill.icon}
-          </span>
-          {skill.name}
-        </Badge>
-      ))}
+            <span
+              style={{
+                color: hoveredIndex === index ? skill.color : "inherit",
+              }}
+              className="transition-colors duration-300"
+            >
+              {skill.icon}
+            </span>
+            {skill.name}
+          </Badge>
+        ))}
+      </div>
     </section>
   );
 }
