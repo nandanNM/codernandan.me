@@ -7,7 +7,7 @@ export default function ProjectsSection() {
   return (
     <div className="mb-4 flex flex-1 flex-col items-start pr-4">
       <div className="mb-2">
-        <strong className="ml-3">Projects 🧑‍💻 ↓ </strong>
+        <strong className="ml-3">Projects 🛠 ↓ </strong>
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <Card className="max:h-[380px] max:w-[380px] flex rounded-3xl p-5">

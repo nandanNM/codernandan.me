@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import twitterLogo from "@/public/svg/linkedin.svg";
 import { cn } from "@/lib/utils";
-
+import fimage from "@/public/images/tt.jpg";
 export default function SocialSection() {
   return (
     <section className="mb-4 pr-4">
@@ -13,7 +13,7 @@ export default function SocialSection() {
         <strong className="ml-3">👇 Find me here 🌍</strong>
       </div>
       <div className="grid grow grid-cols-1 gap-4 sm:grid-cols-3">
-        <SocialCard className="bg-[#f5fafe]" />
+        <SocialCard className="bg-[#f1f6fa]" />
         <SocialCard className="" />
 
         <Card className="min:h-[159.5px] min:w-[159.5px] rounded-3xl border-inherit md:row-span-2">
@@ -28,7 +28,20 @@ export default function SocialSection() {
             </div>
           </div>
         </Card>
-        <SocialCard />
+
+        <Card className="min:h-[159.5px] min:w-[159.5px] overflow-hidden rounded-3xl border-inherit">
+          <div className="relative h-full w-full">
+            <Image
+              src={fimage}
+              alt="Nandan Manna"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute bottom-2 left-4 line-clamp-1 w-fit rounded-[10px] bg-white px-2 py-1.5 shadow-md">
+              <p className="text-[12px] lg:text-sm">Get Easlos templates</p>
+            </div>
+          </div>
+        </Card>
+        {/* <SocialCard /> */}
         <SocialCard />
       </div>
     </section>

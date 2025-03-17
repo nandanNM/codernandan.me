@@ -38,7 +38,6 @@ export default function GitHubSection() {
           <GitHubCalendar
             username="nandanNM"
             colorScheme="light"
-            hideMonthLabels
             blockSize={13}
           />
         </CardContent>
