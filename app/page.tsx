@@ -42,7 +42,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="font-recoleta flex">
+    <div className="font-robotoMono flex leading-7">
       <div className="flex w-full flex-col lg:flex-row">
         <div
           ref={heroSectionRef}

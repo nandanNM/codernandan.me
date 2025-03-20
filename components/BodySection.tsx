@@ -10,7 +10,7 @@ export default function BodySection() {
     <section className="max-w-5xl px-6 py-4 lg:mt-6 xl:mt-8">
       <div className="m-0 justify-center px-1 text-[1.125rem] leading-[1.75rem] font-[600]">
         <p className="tracking-normal">
-          ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––-------
+          –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––----------
         </p>
       </div>
       <AboutSection />

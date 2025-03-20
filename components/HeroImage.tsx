@@ -14,7 +14,7 @@ export default function HeroImage() {
         className="relative aspect-[1/1] overflow-hidden rounded-[9999px]"
       >
         <Image
-          className="absolute top-0 left-0 h-full w-full object-cover"
+          className="absolute top-0 left-0 h-full w-full object-cover grayscale-100"
           src={nandanImage}
           alt="Nandan Manna"
           width={250}

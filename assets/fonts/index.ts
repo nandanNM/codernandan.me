@@ -3,7 +3,17 @@ export const fontCaveat = localFont({
   src: "./caveat.woff2",
   variable: "--font-caveat",
 });
-export const fontRecoleta = localFont({
-  src: "./Recoleta-Medium.ttf",
-  variable: "--font-recoleta",
+export const fontDepartureMono = localFont({
+  src: "./departure-mono.woff",
+  variable: "--font-departureMono",
+});
+export const fontPpFragmentGlare = localFont({
+  src: "./pp-fragment-glare-light.ttf",
+  variable: "--font-ppFragmentGlare",
+});
+export const fontRobotoMono = localFont({
+  src: "./robotoMono-regular.ttf",
+  variable: "--font-robotoMono",
+  weight: "400",
+  style: "normal",
 });
