@@ -1,39 +1,59 @@
 import Image from "next/image";
 import computerAvater from "@/public/images/computerAvater.webp";
-import twitterLogo from "@/public/svg/linkedin.svg";
+import twitterLogo from "@/public/svg/twitter.svg";
+import linkedinLogo from "@/public/svg/linkedin.svg";
 import freelanceImage from "@/public/images/freelance.webp";
 import hashNode from "@/public/svg/hashnode.svg";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
-const socialData = [
+type SocialVariant = "twitter" | "linkedin" | "instagram" | "hashnode";
+interface SocialCardProps {
+  id: number;
+  logo: string;
+  altText: string;
+  name: string;
+  handle: string;
+  link?: string;
+  className?: string;
+  label?: string;
+  variant: SocialVariant;
+}
+const socialData: SocialCardProps[] = [
   {
-    imageSsrc: hashNode,
-    altText: "Hashnode",
-    title: "Hashnode",
-    text: "hashnode.com",
-    link: "https://coder-nandan.hashnode.dev",
-    buttonText: "Read Blog",
-    className: "bg-[#f1f6fa]",
+    id: 1,
+    logo: twitterLogo,
+    altText: "Twitter",
+    name: "X (Twitter)",
+    handle: "@coder_nandan",
+    link: "https://x.com/coder_nandan/",
+    label: "Follow",
+    className: "",
+    variant: "twitter",
   },
   {
-    imageSsrc: twitterLogo,
+    id: 2,
+    logo: linkedinLogo,
     altText: "LinkedIn",
-    title: "Connect on LinkedIn",
-    text: "Let's connect professionally",
-    link: "https://linkedin.com/in/nandanmanna",
-    buttonText: "Connect",
-    className: "",
+    name: "Connect on LinkedIn",
+    handle: "Let's connect professionally",
+    link: "https://www.linkedin.com/in/codernandan/",
+    label: "Connect",
+    className: "bg-[#f1f6fa]",
+    variant: "linkedin",
   },
   {
-    imageSsrc: hashNode,
-    altText: "Another Platform",
-    title: "Another Platform",
-    text: "Follow me here",
-    link: "https://coder-nandan.hashnode.dev",
-    buttonText: "Follow",
-    className: "",
+    id: 3,
+    logo: hashNode,
+    altText: "Hashnode",
+    name: "Hashnode",
+    handle: "hashnode.com",
+    link: "https://coder-nandan.hashnode.dev/",
+    label: "Read Blogs",
+    className: "bg-[#aacafb]/20",
+    variant: "hashnode",
   },
   // Add more social cards as needed
 ];
@@ -60,6 +80,7 @@ export default function SocialSection() {
         <Card className="min:h-[159.5px] min:w-[159.5px] overflow-hidden rounded-3xl border-inherit">
           <div className="relative h-full w-full">
             <Image
+              unoptimized
               src={freelanceImage}
               alt="freelanceImage"
               className="h-full w-full object-cover"
@@ -73,23 +94,16 @@ export default function SocialSection() {
     </section>
   );
 }
-interface SocialCardProps {
-  imageSsrc: string;
-  altText: string;
-  title: string;
-  text: string;
-  link?: string;
-  className?: string;
-  buttonText?: string;
-}
+
 function SocialCard({
-  imageSsrc,
+  logo,
   altText,
-  title,
-  text,
+  name,
+  handle,
   link,
-  buttonText,
+  label,
   className,
+  variant,
 }: SocialCardProps) {
   return (
     <Card
@@ -103,7 +117,7 @@ function SocialCard({
           <div className="flex items-start">
             <div className="relative aspect-square h-10 min-h-10 w-10 min-w-10 overflow-hidden rounded-[10px] shadow-lg">
               <Image
-                src={imageSsrc}
+                src={logo}
                 alt={altText}
                 width={40}
                 height={40}
@@ -113,21 +127,23 @@ function SocialCard({
             </div>
           </div>
           <div className="mt-3 flex w-full shrink-1 grow-1 basis-0 flex-col">
-            <p className="-webkit-line-clamp-1 -webkit-box-orient-vertical mt-0 line-clamp-1 overflow-hidden">
-              {title}
+            <p className="font-departureMono mt-0 line-clamp-1 overflow-hidden">
+              {name}
             </p>
-            <p className="-webkit-line-clamp-1 -webkit-box-orient-vertical overflow-hidden text-xs leading-4 text-[rgba(0,0,0,.6)]">
-              {text}
+            <p className="font-departureMono line-clamp-1 overflow-hidden text-xs leading-4 text-[rgba(0,0,0,.6)]">
+              {handle}
             </p>
           </div>
-          {buttonText && link && (
-            <Button
-              className="mt-3 cursor-pointer rounded-full text-xs font-semibold"
-              variant="twitter"
-              onClick={() => window.open(link, "_blank")}
-            >
-              {buttonText}
-            </Button>
+          {label && link && (
+            <Link href={link} target="_blank">
+              <Button
+                className="mt-3 cursor-pointer rounded-full text-xs font-semibold"
+                variant={variant}
+                onClick={() => window.open(link, "_blank")}
+              >
+                {label}
+              </Button>
+            </Link>
           )}
         </div>
       </div>

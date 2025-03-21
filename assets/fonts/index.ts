@@ -7,10 +7,7 @@ export const fontDepartureMono = localFont({
   src: "./departure-mono.woff",
   variable: "--font-departureMono",
 });
-export const fontPpFragmentGlare = localFont({
-  src: "./pp-fragment-glare-light.ttf",
-  variable: "--font-ppFragmentGlare",
-});
+
 export const fontRobotoMono = localFont({
   src: "./robotoMono-regular.ttf",
   variable: "--font-robotoMono",

@@ -26,12 +26,12 @@ const buttonVariants = cva(
           "bg-[#0a66c2]/80 text-gray-100 border border-[#0a66c2]/30 hover:bg-[#0a66c2]",
         instagram:
           "bg-[#c13584]/80 text-gray-100 border border-[#c13584]/30 hover:bg-[#c13584]",
-        discord:
-          "bg-[#7289da]/80 text-gray-100 border border-[#7289da]/30 hover:bg-[#7289da]",
+        hashnode:
+          "bg-[#3067ff] text-gray-100 border border-[#4086f6]/80 hover:bg-[#4086f6]",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        sm: "h-6 rounded-md gap-1.5 px-2 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
       },
